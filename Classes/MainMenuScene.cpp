@@ -33,6 +33,12 @@ bool MainMenuScene::init()
 
 	cocos2d::Sprite* bgsprite = Sprite::create("ipadhd/Background.png");
 	bgsprite->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	this->addChild(bgsprite);
+
+	cocos2d::Sprite* titlesprite = Sprite::create("ipadhd/Title.png");
+	titlesprite->setPosition(visibleSize.width / 2, visibleSize.height -
+		titlesprite->getContentSize().height);
+	this->addChild(titlesprite);
 
 	static cocos2d::MenuItemImage* playItem = MenuItemImage::create("ipadhd/Play Button.png",
 		"ipadhd/Play Button Clicked.png", CC_CALLBACK_1(MainMenuScene::gotoGameScene, this));
@@ -41,7 +47,6 @@ bool MainMenuScene::init()
 	static cocos2d::Menu* menu = Menu::create(playItem, NULL);
 	menu->setPosition(Point::ZERO);
 
-	this->addChild(bgsprite);
 	this->addChild(menu);
     
     return true;

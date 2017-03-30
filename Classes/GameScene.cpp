@@ -1,5 +1,7 @@
 #include "GameScene.h"
-//hehe
+#include "Definitions.h"
+#include "Pipe.h"
+
 USING_NS_CC;
 
 Scene* GameScene::createScene()
@@ -35,5 +37,19 @@ bool GameScene::init()
 	bgsprite->setPosition(visibleSize.width / 2, visibleSize.height / 2);
 	this->addChild(bgsprite);
 
+	cocos2d::PhysicsBody* edgeBody = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3.0f);
+	cocos2d::Node* edgeNode = Node::create();
+	edgeNode->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	edgeNode->setPhysicsBody(edgeBody);
+	this->addChild(edgeNode);
+
+	this->schedule(schedule_selector(GameScene::spawnPipe), PIPE_SPAWN_FREQUENCY *
+							visibleSize.width);
+
     return true;
+}
+
+void GameScene::spawnPipe(float dt)
+{
+	pipe.spawnPipe(this);
 }

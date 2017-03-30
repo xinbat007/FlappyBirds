@@ -45,6 +45,9 @@
     <ClCompile Include="..\Classes\Test\TouchScene.cpp">
       <Filter>src\Test</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Pipe.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -79,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Test\TouchScene.h">
       <Filter>src\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Pipe.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
