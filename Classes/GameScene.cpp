@@ -1,5 +1,5 @@
 #include "GameScene.h"
-
+//hahah
 USING_NS_CC;
 
 Scene* GameScene::createScene()
