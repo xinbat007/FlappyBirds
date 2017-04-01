@@ -52,7 +52,7 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Test\SpriteSheetScene.cpp">
-      <Filter>src</Filter>
+      <Filter>src\Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,7 +96,7 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Test\SpriteSheetScene.h">
-      <Filter>src</Filter>
+      <Filter>src\Test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

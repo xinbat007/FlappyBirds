@@ -7,7 +7,12 @@ Bird::Bird(cocos2d::Layer* layer)
 {
 	visibleSize = Director::getInstance()->getVisibleSize();
 	origin = Director::getInstance()->getVisibleOrigin();
-	flappyBird = Sprite::create("ipadhd/Ball.png");
+
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("FlappyScene/FlappyScene.plist");
+	cocos2d::SpriteFrame* temp = SpriteFrameCache::getInstance()->getSpriteFrameByName("Ball.png");
+	flappyBird = Sprite::createWithSpriteFrameName("Ball.png");
+	flappyBird->setScale(4);	// 52 / 17 = 3.0588
+	//flappyBird = Sprite::create("ipadhd/Ball.png");
 	flappyBird->setPosition(visibleSize.width / 2, visibleSize.height / 2);
 
 	auto flappyBody = PhysicsBody::createCircle(flappyBird->getContentSize().width / 2);

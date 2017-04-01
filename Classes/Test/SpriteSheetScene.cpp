@@ -35,7 +35,7 @@ bool SpriteSheetScene::init()
 	spritecache->addSpriteFramesWithFile("CityScene/cityscene.plist");
 	
 	cocos2d::SpriteFrame* spriteframe = spritecache->getSpriteFrameByName("background.png");
-	auto background = Sprite::createWithSpriteFrame(spriteframe);
+	cocos2d::Sprite* background = Sprite::createWithSpriteFrame(spriteframe);
 	background->setPosition(visibleSize.width / 2, visibleSize.height / 2);
 	this->addChild(background);
 
