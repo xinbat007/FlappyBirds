@@ -3,6 +3,7 @@
 #include "Test/GraphicsScene.h"
 #include "Test/TouchScene.h"
 #include "Test/KeyboardScene.h"
+#include "Test/SpriteSheetScene.h"
 #include "SplashScene.h"
 #include "MainMenuScene.h"
 #include "GameScene.h"
@@ -10,7 +11,7 @@
 
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(480, 800);
+static cocos2d::Size designResolutionSize = cocos2d::Size(800, 480);
 //static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
 static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
 static cocos2d::Size mediumResolutionSize = cocos2d::Size(1024, 768);
@@ -82,7 +83,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-    auto scene = SplashScene::createScene();
+	auto scene = SpriteSheetScene::createScene();
 	//auto scene = KeyboardScene::createScene();
 
     // run
