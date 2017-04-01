@@ -1,13 +1,17 @@
 #pragma once
 
 #include "cocos2d.h"
+#include "SimpleAudioEngine.h"
 
 class Bird
 {
 public:
 	Bird(cocos2d::Layer*);
 	void Fall();
-	void Fly() { isFalling = false; }
+	void Fly() {
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Sounds/Wing.mp3");
+		isFalling = false;
+	}
 	void StopFlying() { isFalling = true; }
 
 private:

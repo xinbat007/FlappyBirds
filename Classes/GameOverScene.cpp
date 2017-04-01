@@ -5,10 +5,14 @@
 
 USING_NS_CC;
 
-Scene* GameOverScene::createScene()
+unsigned int score;
+
+Scene* GameOverScene::createScene(unsigned int tempScore)
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();
+
+	score = tempScore;
     
     // 'layer' is an autorelease object
 	auto layer = GameOverScene::create();
@@ -52,6 +56,30 @@ bool GameOverScene::init()
 	menu->setPosition(Point::ZERO);
 	this->addChild(menu);
     
+	UserDefault *def = UserDefault::getInstance();
+	auto highscore = def->getIntegerForKey("HIGHSCORE FLAPPY", 0);
+	if (score > highscore)
+	{
+		highscore = score;
+		def->setIntegerForKey("HIGHSCORE FLAPPY", highscore);
+	}
+	def->flush();
+
+	__String *tempScore = __String::createWithFormat("%i", score);
+	auto currentScore = Label::createWithTTF(tempScore->getCString(), "fonts/Marker Felt.ttf",
+		visibleSize.height * SCORE_FONT_SIZE);
+	currentScore->setPosition(visibleSize.width * 0.25,
+		visibleSize.height / 2);
+	this->addChild(currentScore);
+
+	__String *tempHighScore = __String::createWithFormat("%i", score);
+	auto highScoreLabel = Label::createWithTTF(tempHighScore->getCString(), "fonts/Marker Felt.ttf",
+		visibleSize.height * SCORE_FONT_SIZE);
+	highScoreLabel->setColor(Color3B::YELLOW);
+	highScoreLabel->setPosition(visibleSize.width * 0.75,
+		visibleSize.height / 2);
+	this->addChild(highScoreLabel);
+
     return true;
 }
 

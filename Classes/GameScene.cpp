@@ -8,7 +8,7 @@ Scene* GameScene::createScene()
 {
     // 'scene' is an autorelease object
 	cocos2d::Scene* scene = Scene::createWithPhysics();
-	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 	scene->getPhysicsWorld()->setGravity(Vec2(0, 0));
     
     // 'layer' is an autorelease object
@@ -65,7 +65,7 @@ bool GameScene::init()
 	score = 0;
 	__String *tempScore = __String::createWithFormat("%i", score);
 	scoreLabel = Label::createWithTTF(tempScore->getCString(), "fonts/Marker Felt.ttf",
-		visibleSize.height * SCORE_POINT_SIZE);
+		visibleSize.height * SCORE_FONT_SIZE);
 	scoreLabel->setColor(Color3B::WHITE);
 	scoreLabel->setPosition(visibleSize.width / 2,
 		visibleSize.height * 0.75);
@@ -90,7 +90,8 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact& contact)
 		(BIRD_COLLISION_BITMASK == b->getCollisionBitmask() &&
 		OBSTACLE_COLLISION_BITMASK == a->getCollisionBitmask()))
 	{
-		auto scene = GameOverScene::createScene();
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Sounds/Hit.mp3");
+		auto scene = GameOverScene::createScene(score);
 		Director::getInstance()->replaceScene(TransitionFade::create
 			(TRANSITION_TIME, scene));
 	}
@@ -99,6 +100,7 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact& contact)
 		(BIRD_COLLISION_BITMASK == b->getCollisionBitmask() &&
 		POINT_COLLISION_BITMASK == a->getCollisionBitmask()))
 	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Sounds/Point.mp3");
 		score++;
 		__String *tempScore = __String::createWithFormat("%i", score);
 		scoreLabel->setString(tempScore->getCString());
