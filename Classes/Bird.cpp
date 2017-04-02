@@ -34,9 +34,9 @@ void Bird::Fall()
 			(BIRD_FALLING_SPEED * visibleSize.height));
 	}
 	else
-	{
+	{/*
 		flappyBird->setPositionX(visibleSize.width / 2);
 		flappyBird->setPositionY(flappyBird->getPositionY() +
-			(BIRD_FLYING_SPEED * visibleSize.height));
+			(BIRD_FLYING_SPEED * visibleSize.height));*/
 	}
 }

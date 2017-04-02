@@ -154,6 +154,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Test\GraphicsScene.cpp" />
     <ClCompile Include="..\Classes\Test\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\Test\KeyboardScene.cpp" />
+    <ClCompile Include="..\Classes\Test\PhysicsBallScene.cpp" />
     <ClCompile Include="..\Classes\Test\SpriteSheetScene.cpp" />
     <ClCompile Include="..\Classes\Test\TouchScene.cpp" />
     <ClCompile Include="main.cpp" />
@@ -170,6 +171,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Test\GraphicsScene.h" />
     <ClInclude Include="..\Classes\Test\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\Test\KeyboardScene.h" />
+    <ClInclude Include="..\Classes\Test\PhysicsBallScene.h" />
     <ClInclude Include="..\Classes\Test\SpriteSheetScene.h" />
     <ClInclude Include="..\Classes\Test\TouchScene.h" />
     <ClInclude Include="main.h" />

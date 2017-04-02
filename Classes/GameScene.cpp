@@ -9,7 +9,7 @@ Scene* GameScene::createScene()
     // 'scene' is an autorelease object
 	cocos2d::Scene* scene = Scene::createWithPhysics();
 	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
-	scene->getPhysicsWorld()->setGravity(Vec2(0, 0));
+	scene->getPhysicsWorld()->setGravity(Vec2(0, 0.0f));
     
     // 'layer' is an autorelease object
 	GameScene* layer = GameScene::create();

@@ -82,11 +82,11 @@
                 <key>textureRotated</key>
                 <false/>
                 <key>triangles</key>
-                <string>0 4 5 0 3 4 3 0 1 3 1 2</string>
+                <string>0 5 6 0 4 5 0 3 4 3 0 1 3 1 2</string>
                 <key>vertices</key>
-                <string>46 69 58 125 18 126 8 99 22 0 75 0</string>
+                <string>46 69 58 125 18 126 8 99 21 9 30 0 75 0</string>
                 <key>verticesUV</key>
-                <string>1061 582 1073 638 1033 639 1023 612 1037 513 1090 513</string>
+                <string>1061 582 1073 638 1033 639 1023 612 1036 522 1045 513 1090 513</string>
             </dict>
             <key>capguy/walk/0004.png</key>
             <dict>
@@ -198,12 +198,16 @@
         <dict>
             <key>format</key>
             <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
             <key>realTextureFileName</key>
             <string>cityscene.png</string>
             <key>size</key>
             <string>{1136,768}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:15256cd0daa300a5a9c5191d3265d3ca:901a8c5b6c5ac754ede4d47255356dbc:781573cbd56cf75c56b063c5572d5827$</string>
+            <string>$TexturePacker:SmartUpdate:b966b1c74c7520359c522125005b37c5:901a8c5b6c5ac754ede4d47255356dbc:781573cbd56cf75c56b063c5572d5827$</string>
             <key>textureFileName</key>
             <string>cityscene.png</string>
         </dict>
