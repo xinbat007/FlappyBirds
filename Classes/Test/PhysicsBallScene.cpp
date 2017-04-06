@@ -5,7 +5,7 @@ Scene* PhysicsBallScene::createScene()
 	// 'scene' is an autorelease object
 	auto scene = Scene::createWithPhysics();
 
-	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 	scene->getPhysicsWorld()->setGravity(Vect(0.0f, -300.0f));
 	// 'layer' is an autorelease object
 	auto layer = PhysicsBallScene::create();
@@ -35,7 +35,7 @@ bool PhysicsBallScene::init()
 	// Create sprite and add it to the layer
 	_ball = Sprite::create("Ball.jpg", Rect(0, 0, 52, 52));
 	_ball->setPosition(Point(400, 400));
-	auto ballBody = PhysicsBody::createCircle(_ball->getContentSize().width);
+	auto ballBody = PhysicsBody::createCircle(_ball->getContentSize().width / 2);
 	ballBody->setContactTestBitmask(0x1);
 	//ballBody->setDynamic(false);
 	_ball->setPhysicsBody(ballBody);
@@ -52,7 +52,9 @@ bool PhysicsBallScene::init()
 	auto edgeSp = Sprite::create();
 	auto boundBody = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
 	edgeSp->setPosition(Point(visibleSize.width / 2, visibleSize.height / 2));
-	edgeSp->setPhysicsBody(boundBody); this->addChild(edgeSp); edgeSp->setTag(0);
+	edgeSp->setPhysicsBody(boundBody);
+	edgeSp->setTag(0);
+	this->addChild(edgeSp);
 
 	//auto Listener=EventListenerPhysicsContactWithGroup::create(100);
 
